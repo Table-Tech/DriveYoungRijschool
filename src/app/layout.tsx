@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   title: "Drive Young Rijschool | Haal je rijbewijs met vertrouwen",
   description: "Drive Young Rijschool - Professionele rijlessen met persoonlijke begeleiding. Haal je rijbewijs in een ontspannen sfeer met ervaren instructeurs.",
   keywords: "rijschool, rijlessen, rijbewijs, autorijlessen, Rotterdam, Drive Young",
+  icons: {
+    icon: "/Glanzend blauw logo op donkere achtergrond.png",
+    apple: "/Glanzend blauw logo op donkere achtergrond.png",
+  },
 };
 
 export default function RootLayout({
