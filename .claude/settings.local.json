@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:v0-remake-willesrijschool.vercel.app)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --yes)",
+      "Bash(npm run build:*)",
+      "Bash(timeout 15 npm run dev)",
+      "Bash(npm install)",
+      "Bash(npm install:*)"
+    ]
+  }
+}
