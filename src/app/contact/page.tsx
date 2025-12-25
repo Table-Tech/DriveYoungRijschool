@@ -15,6 +15,42 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      vraag: 'Hoeveel rijlessen heb ik nodig?',
+      antwoord: 'Dit verschilt per persoon. Gemiddeld hebben onze leerlingen 25-35 lessen nodig. Tijdens een gratis proefles kunnen we een persoonlijke inschatting maken op basis van je huidige niveau en leerdoelen.'
+    },
+    {
+      vraag: 'Kan ik mijn rijles annuleren of verzetten?',
+      antwoord: 'Ja, je kunt tot 48 uur van tevoren kosteloos annuleren of verzetten. Bij annulering binnen 48 uur worden de kosten in rekening gebracht, tenzij er sprake is van overmacht.'
+    },
+    {
+      vraag: 'In welke auto\'s geven jullie les?',
+      antwoord: 'We rijden in moderne, goed onderhouden lesauto\'s met dubbele bediening. Onze auto\'s zijn uitgerust met de nieuwste veiligheidsvoorzieningen en zijn comfortabel voor beginnende bestuurders.'
+    },
+    {
+      vraag: 'Wat is het slagingspercentage?',
+      antwoord: 'Ons slagingspercentage ligt rond de 95%, ruim boven het landelijk gemiddelde. Dit komt door onze persoonlijke aanpak en grondige examenvoorbereiding.'
+    },
+    {
+      vraag: 'Rijden jullie ook in het weekend?',
+      antwoord: 'Ja! We bieden flexibele lestijden aan, ook in het weekend en op avonden. Zo kunnen we de lessen aanpassen aan jouw schema, of je nu studeert of werkt.'
+    },
+    {
+      vraag: 'Hoe boek ik mijn praktijkexamen?',
+      antwoord: 'Wij regelen de examenaanvraag bij het CBR voor je. Zodra je instructeur vindt dat je klaar bent, plannen we samen een geschikte examendatum. De examenkosten worden apart in rekening gebracht.'
+    },
+    {
+      vraag: 'Kan ik betalen in termijnen?',
+      antwoord: 'Ja, we bieden verschillende betaalopties aan. Je kunt per les betalen, of bij een pakket in termijnen. Neem contact op voor de mogelijkheden die bij jou passen.'
+    },
+    {
+      vraag: 'Wat als ik zak voor mijn examen?',
+      antwoord: 'Geen zorgen, dat gebeurt de beste leerlingen. We analyseren samen wat er misging en plannen extra lessen om die punten te verbeteren. Daarna boeken we een nieuw examen wanneer je er klaar voor bent.'
+    },
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -265,42 +301,91 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* FAQ Quick Links */}
+      {/* FAQ Section */}
       <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Veelgestelde <span className="text-blue-600">Vragen</span>
+            </h2>
+            <p className="text-xl text-gray-600">
+              Vind snel antwoord op de meest gestelde vragen
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-2xl overflow-hidden transition-all duration-300"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-100 transition-colors"
+                >
+                  <span className="font-semibold text-gray-900 pr-4">{faq.vraag}</span>
+                  <svg
+                    className={`w-5 h-5 text-blue-600 flex-shrink-0 transition-transform duration-300 ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  className={`transition-all duration-300 ease-in-out ${
+                    openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  } overflow-hidden`}
+                >
+                  <div className="px-6 pb-5 text-gray-600 leading-relaxed">
+                    {faq.antwoord}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Quick Links */}
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Misschien vind je hier al <span className="text-blue-600">antwoord</span>
+              Meer <span className="text-blue-600">informatie</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link href="/proefles" className="bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-colors group">
+            <Link href="/proefles" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:scale-[1.02] transition-all group">
               <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Hoe vraag ik een proefles aan?</h3>
               <p className="text-gray-600 text-sm">Vul ons proefles formulier in en we nemen contact op.</p>
             </Link>
 
-            <Link href="/prijzen" className="bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-colors group">
+            <Link href="/prijzen" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:scale-[1.02] transition-all group">
               <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Wat kosten de rijlessen?</h3>
               <p className="text-gray-600 text-sm">Bekijk onze transparante prijzen en pakketten.</p>
             </Link>
 
-            <Link href="/pakketten" className="bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-colors group">
+            <Link href="/pakketten" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:scale-[1.02] transition-all group">
               <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Welk pakket past bij mij?</h3>
               <p className="text-gray-600 text-sm">Vergelijk onze pakketten en kies de beste optie.</p>
             </Link>
 
-            <Link href="/lesinfo" className="bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-colors group">
+            <Link href="/lesinfo" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:scale-[1.02] transition-all group">
               <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Waar geven jullie les?</h3>
               <p className="text-gray-600 text-sm">Ontdek onze leslocaties en lestijden.</p>
             </Link>
 
-            <Link href="/aanmelden" className="bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-colors group">
+            <Link href="/aanmelden" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:scale-[1.02] transition-all group">
               <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Hoe schrijf ik me in?</h3>
               <p className="text-gray-600 text-sm">Meld je direct aan via ons inschrijfformulier.</p>
             </Link>
 
-            <Link href="/geslaagden" className="bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-colors group">
+            <Link href="/geslaagden" className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:scale-[1.02] transition-all group">
               <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Wat zeggen anderen?</h3>
               <p className="text-gray-600 text-sm">Lees ervaringen van onze geslaagde leerlingen.</p>
             </Link>
