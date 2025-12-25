@@ -63,24 +63,24 @@ const testimonials = [
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
   return (
-    <div className="flex-shrink-0 w-[350px] bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mx-3">
-      <div className="flex items-center mb-4">
+    <div className="flex-shrink-0 w-[280px] sm:w-[350px] bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-100 mx-2 sm:mx-3">
+      <div className="flex items-center mb-3 sm:mb-4">
         {[...Array(testimonial.rating)].map((_, i) => (
-          <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+          <svg key={i} className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
         ))}
       </div>
-      <p className="text-gray-600 mb-6 line-clamp-4">
+      <p className="text-gray-600 mb-4 sm:mb-6 line-clamp-4 text-sm sm:text-base">
         &ldquo;{testimonial.text}&rdquo;
       </p>
       <div className="flex items-center">
-        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
-          <span className="text-white font-bold text-sm">{testimonial.initials}</span>
+        <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+          <span className="text-white font-bold text-xs sm:text-sm">{testimonial.initials}</span>
         </div>
-        <div className="ml-3">
-          <div className="font-semibold text-gray-900 text-sm">{testimonial.name}</div>
-          <div className="text-xs text-gray-500">Geslaagd {testimonial.date}</div>
+        <div className="ml-2 sm:ml-3">
+          <div className="font-semibold text-gray-900 text-xs sm:text-sm">{testimonial.name}</div>
+          <div className="text-[10px] sm:text-xs text-gray-500">Geslaagd {testimonial.date}</div>
         </div>
       </div>
     </div>
@@ -89,23 +89,23 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 bg-gray-50 overflow-hidden">
+    <section className="py-12 sm:py-20 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
             Trots op onze <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-700">geslaagden</span>
           </h2>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
+          <p className="text-sm sm:text-lg text-gray-500 max-w-xl mx-auto">
             Zij gingen je voor - jij kunt de volgende zijn!
           </p>
         </div>
 
         {/* Geslaagden Photos */}
-        <div className="flex justify-center items-center gap-6 md:gap-10 lg:gap-12 mb-16">
+        <div className="flex justify-center items-center gap-3 sm:gap-6 md:gap-10 lg:gap-12 mb-10 sm:mb-16">
           {/* Left Photo - Tilted Left */}
-          <div className="relative w-40 h-52 md:w-56 md:h-72 lg:w-64 lg:h-80 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-xl"></div>
-            <div className="absolute inset-1 bg-white rounded-xl overflow-hidden">
+          <div className="relative w-24 h-32 sm:w-40 sm:h-52 md:w-56 md:h-72 lg:w-64 lg:h-80 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl shadow-xl"></div>
+            <div className="absolute inset-0.5 sm:inset-1 bg-white rounded-lg sm:rounded-xl overflow-hidden">
               <Image
                 src="/ChatGPT Image 25 dec 2025, 11_31_27.png"
                 alt="Geslaagde leerling"
@@ -116,9 +116,9 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Middle Photo - Straight */}
-          <div className="relative w-44 h-56 md:w-64 md:h-80 lg:w-72 lg:h-96 transform hover:scale-105 transition-transform duration-300 z-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl shadow-2xl"></div>
-            <div className="absolute inset-1 bg-white rounded-xl overflow-hidden">
+          <div className="relative w-28 h-36 sm:w-44 sm:h-56 md:w-64 md:h-80 lg:w-72 lg:h-96 transform hover:scale-105 transition-transform duration-300 z-10">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl sm:rounded-2xl shadow-2xl"></div>
+            <div className="absolute inset-0.5 sm:inset-1 bg-white rounded-lg sm:rounded-xl overflow-hidden">
               <Image
                 src="/ChatGPT Image 25 dec 2025, 11_28_38.png"
                 alt="Geslaagde leerling"
@@ -129,9 +129,9 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Right Photo - Tilted Right */}
-          <div className="relative w-40 h-52 md:w-56 md:h-72 lg:w-64 lg:h-80 transform rotate-6 hover:rotate-0 transition-transform duration-300">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-xl"></div>
-            <div className="absolute inset-1 bg-white rounded-xl overflow-hidden">
+          <div className="relative w-24 h-32 sm:w-40 sm:h-52 md:w-56 md:h-72 lg:w-64 lg:h-80 transform rotate-6 hover:rotate-0 transition-transform duration-300">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl shadow-xl"></div>
+            <div className="absolute inset-0.5 sm:inset-1 bg-white rounded-lg sm:rounded-xl overflow-hidden">
               <Image
                 src="/ChatGPT Image 25 dec 2025, 11_25_12.png"
                 alt="Geslaagde leerling"
@@ -159,13 +159,13 @@ export default function TestimonialsSection() {
         </div>
       </div>
 
-      <div className="text-center mt-12">
+      <div className="text-center mt-8 sm:mt-12 px-4">
         <a
           href="/geslaagden"
-          className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-full hover:bg-blue-700 transition-colors"
         >
           Bekijk Alle Geslaagden
-          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>

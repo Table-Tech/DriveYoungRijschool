@@ -93,62 +93,62 @@ export default function PackagesSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-12 sm:py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-14">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
             Kies jouw pakket
           </h2>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
+          <p className="text-sm sm:text-lg text-gray-500 max-w-xl mx-auto">
             Transparante prijzen, geen verborgen kosten
           </p>
         </div>
 
         {!selectedPackage ? (
           <>
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {packages.map((pkg) => (
                 <div
                   key={pkg.id}
                   onClick={() => setSelectedPackage(pkg)}
-                  className={`group relative cursor-pointer rounded-3xl p-8 transition-all duration-300
+                  className={`group relative cursor-pointer rounded-2xl sm:rounded-3xl p-5 sm:p-8 transition-all duration-300
                     ${pkg.popular
                       ? 'bg-gradient-to-br from-blue-600 to-blue-700 shadow-2xl shadow-blue-500/25 md:-translate-y-2 ring-4 ring-blue-400/20'
                       : 'bg-white border-2 border-gray-100 hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1'
                     }`}
                 >
                   {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-amber-400 to-orange-400 text-white text-xs font-bold px-5 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="bg-gradient-to-r from-amber-400 to-orange-400 text-white text-[10px] sm:text-xs font-bold px-3 sm:px-5 py-1 sm:py-1.5 rounded-full uppercase tracking-wider shadow-lg">
                         Populair
                       </span>
                     </div>
                   )}
 
-                  <div className="mb-6">
-                    <h3 className={`text-2xl font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className={`text-xl sm:text-2xl font-bold mb-1 ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
                       {pkg.name}
                     </h3>
-                    <p className={`text-sm ${pkg.popular ? 'text-blue-200' : 'text-gray-500'}`}>
+                    <p className={`text-xs sm:text-sm ${pkg.popular ? 'text-blue-200' : 'text-gray-500'}`}>
                       {pkg.subtitle}
                     </p>
                   </div>
 
-                  <div className="mb-2">
-                    <span className={`text-5xl font-bold ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
+                  <div className="mb-1 sm:mb-2">
+                    <span className={`text-3xl sm:text-5xl font-bold ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
                       &euro;{pkg.price.toLocaleString('nl-NL')}
                     </span>
                   </div>
 
-                  <p className={`text-sm mb-8 ${pkg.popular ? 'text-blue-200' : 'text-gray-400'}`}>
+                  <p className={`text-xs sm:text-sm mb-5 sm:mb-8 ${pkg.popular ? 'text-blue-200' : 'text-gray-400'}`}>
                     {pkg.lessons} lessen &bull; &euro;{pkg.pricePerLesson.toFixed(2).replace('.', ',')} per les
                   </p>
 
-                  <ul className="space-y-4 mb-8">
+                  <ul className="space-y-2 sm:space-y-4 mb-5 sm:mb-8">
                     {pkg.features.map((feature, index) => (
-                      <li key={index} className={`flex items-center ${pkg.popular ? 'text-blue-100' : 'text-gray-600'}`}>
-                        <div className={`w-5 h-5 rounded-full flex items-center justify-center mr-3 flex-shrink-0 ${pkg.popular ? 'bg-blue-500' : 'bg-blue-100'}`}>
-                          <svg className={`w-3 h-3 ${pkg.popular ? 'text-white' : 'text-blue-600'}`} fill="currentColor" viewBox="0 0 20 20">
+                      <li key={index} className={`flex items-center text-sm sm:text-base ${pkg.popular ? 'text-blue-100' : 'text-gray-600'}`}>
+                        <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 ${pkg.popular ? 'bg-blue-500' : 'bg-blue-100'}`}>
+                          <svg className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${pkg.popular ? 'text-white' : 'text-blue-600'}`} fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                           </svg>
                         </div>
@@ -158,7 +158,7 @@ export default function PackagesSection() {
                   </ul>
 
                   <button
-                    className={`w-full py-4 px-6 text-center font-bold rounded-2xl transition-all duration-300
+                    className={`w-full py-3 sm:py-4 px-4 sm:px-6 text-center text-sm sm:text-base font-bold rounded-xl sm:rounded-2xl transition-all duration-300
                       ${pkg.popular
                         ? 'bg-white text-blue-600 hover:bg-blue-50 shadow-lg'
                         : 'bg-blue-600 text-white hover:bg-blue-700 group-hover:shadow-lg'
@@ -170,21 +170,21 @@ export default function PackagesSection() {
               ))}
             </div>
 
-            <p className="text-center text-gray-400 mt-10 text-sm">
-              Losse les: &euro;52,50 per uur &bull; Alle prijzen zijn inclusief BTW
+            <p className="text-center text-gray-400 mt-6 sm:mt-10 text-xs sm:text-sm">
+              Losse les: &euro;52,50 per uur &bull; Inclusief BTW
             </p>
 
             {/* Advice Button */}
             {!showAdvice && (
-              <div className="text-center mt-12">
+              <div className="text-center mt-8 sm:mt-12 px-4">
                 <button
                   onClick={() => setShowAdvice(true)}
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-900 text-white font-semibold rounded-full hover:from-gray-700 hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-gray-800 to-gray-900 text-white text-sm sm:text-base font-semibold rounded-full hover:from-gray-700 hover:to-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  Niet zeker welk pakket bij je past? Vraag persoonlijk advies
+                  <span className="hidden sm:inline">Niet zeker welk pakket bij je past?</span> Vraag advies
                 </button>
               </div>
             )}

@@ -35,7 +35,7 @@ export default function ProeflesSection() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
+    <section className="py-12 sm:py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -59,49 +59,48 @@ export default function ProeflesSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {!showForm ? (
           <div className="text-center">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full mb-8">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-20 sm:h-20 bg-white/10 backdrop-blur-sm rounded-full mb-6 sm:mb-8">
+              <svg className="w-7 h-7 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
 
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
               Start met een <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-cyan-100">gratis</span> proefles
             </h2>
 
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-10">
+            <p className="text-base sm:text-xl text-blue-100 max-w-2xl mx-auto mb-8 sm:mb-10 px-4">
               Ervaar zelf hoe het is om les te krijgen bij Drive Young.
-              Geheel vrijblijvend en zonder verplichtingen.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-12 px-4">
               <button
                 onClick={() => setShowForm(true)}
-                className="group px-10 py-5 bg-white text-blue-700 font-bold text-lg rounded-full hover:bg-blue-50 transition-all duration-300 shadow-2xl shadow-black/20 flex items-center gap-3"
+                className="group px-8 sm:px-10 py-4 sm:py-5 bg-white text-blue-700 font-bold text-sm sm:text-lg rounded-full hover:bg-blue-50 transition-all duration-300 shadow-2xl shadow-black/20 flex items-center gap-2 sm:gap-3"
               >
                 Vraag proefles aan
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </button>
             </div>
 
             {/* Features */}
-            <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-              <div className="flex items-center justify-center gap-3 text-blue-100">
-                <svg className="w-6 h-6 text-cyan-300" fill="currentColor" viewBox="0 0 20 20">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 max-w-3xl mx-auto px-4">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 text-blue-100 text-sm sm:text-base">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 <span>60 minuten rijles</span>
               </div>
-              <div className="flex items-center justify-center gap-3 text-blue-100">
-                <svg className="w-6 h-6 text-cyan-300" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 text-blue-100 text-sm sm:text-base">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 <span>Gratis ophalen</span>
               </div>
-              <div className="flex items-center justify-center gap-3 text-blue-100">
-                <svg className="w-6 h-6 text-cyan-300" fill="currentColor" viewBox="0 0 20 20">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 text-blue-100 text-sm sm:text-base">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-300" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
                 <span>Geen verplichtingen</span>

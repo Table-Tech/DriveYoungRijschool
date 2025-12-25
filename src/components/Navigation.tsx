@@ -34,17 +34,17 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center">
-          {/* Brand Container - Vaste breedte zodat logo groter kan zonder menu te verschuiven */}
-          <div className="w-[280px] flex-shrink-0">
+          {/* Brand Container - Responsive breedte */}
+          <div className="lg:w-[280px] flex-shrink-0">
             <Link href="/" className="flex items-center">
               <Image
                 src="/Glanzend blauw logo op donkere achtergrond.png"
                 alt="Drive Young Logo"
                 width={100}
                 height={100}
-                className="h-24 w-auto max-w-[120px] object-contain flex-shrink-0"
+                className="h-14 sm:h-16 lg:h-24 w-auto max-w-[70px] sm:max-w-[80px] lg:max-w-[120px] object-contain flex-shrink-0"
               />
-              <span className={`text-xl font-bold transition-colors duration-300 whitespace-nowrap -ml-2 ${
+              <span className={`text-base sm:text-lg lg:text-xl font-bold transition-colors duration-300 whitespace-nowrap -ml-1 lg:-ml-2 ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
                 Drive <span className={`text-transparent bg-clip-text bg-gradient-to-r ${
@@ -113,31 +113,31 @@ export default function Navigation() {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden transition-all duration-300 overflow-hidden ${
-            isMobileMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
+            isMobileMenuOpen ? 'max-h-[500px] pb-4' : 'max-h-0'
           }`}
         >
-          <div className="bg-white rounded-2xl shadow-xl p-4 mt-2">
+          <div className="bg-white rounded-2xl shadow-xl p-3 mt-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-3 px-4 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors"
+                className="block py-2.5 px-3 text-gray-700 text-sm font-medium hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="mt-4 pt-4 border-t border-gray-100 space-y-2">
+            <div className="mt-3 pt-3 border-t border-gray-100 space-y-2">
               <Link
                 href="/proefles"
-                className="block w-full text-center py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
+                className="block w-full text-center py-2.5 text-sm bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Gratis Proefles
               </Link>
               <Link
                 href="/aanmelden"
-                className="block w-full text-center py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+                className="block w-full text-center py-2.5 text-sm border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Aanmelden

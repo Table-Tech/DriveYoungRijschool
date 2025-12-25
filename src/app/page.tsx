@@ -22,49 +22,48 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/30"></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-center">
           <div className="animate-fade-in-up">
-            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-blue-200 text-sm font-medium mb-6">
+            <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full text-blue-200 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
               Welkom bij Drive Young
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up delay-100">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 animate-fade-in-up delay-100">
             Rij je <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">toekomst</span><br />
             tegemoet
           </h1>
 
-          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10 animate-fade-in-up delay-200">
+          <p className="text-base sm:text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-8 sm:mb-10 animate-fade-in-up delay-200 px-2">
             Bij Drive Young leer je autorijden in een ontspannen sfeer met persoonlijke begeleiding.
-            Wij helpen jou om met vertrouwen de weg op te gaan.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
-            <Link href="/proefles" className="btn-white text-lg px-8 py-4 animate-pulse-glow">
-              Gratis Proefles Aanvragen
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up delay-300 px-4">
+            <Link href="/proefles" className="btn-white text-sm sm:text-lg px-6 sm:px-8 py-3 sm:py-4 animate-pulse-glow">
+              Gratis Proefles
             </Link>
-            <Link href="/pakketten" className="bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 text-lg px-8 py-4 transition-colors">
+            <Link href="/pakketten" className="bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 text-sm sm:text-lg px-6 sm:px-8 py-3 sm:py-4 transition-colors">
               Bekijk Pakketten
             </Link>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in-up delay-400">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mt-12 sm:mt-20 animate-fade-in-up delay-400">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">500+</div>
-              <div className="text-blue-200">Geslaagde Leerlingen</div>
+              <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1">500+</div>
+              <div className="text-blue-200 text-xs sm:text-base">Geslaagden</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">95%</div>
-              <div className="text-blue-200">Slagingspercentage</div>
+              <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1">95%</div>
+              <div className="text-blue-200 text-xs sm:text-base">Slagingspercentage</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">10+</div>
-              <div className="text-blue-200">Jaar Ervaring</div>
+              <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1">10+</div>
+              <div className="text-blue-200 text-xs sm:text-base">Jaar Ervaring</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">5.0</div>
-              <div className="text-blue-200">Google Rating</div>
+              <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1">5.0</div>
+              <div className="text-blue-200 text-xs sm:text-base">Google Rating</div>
             </div>
           </div>
         </div>
@@ -84,19 +83,19 @@ export default function Home() {
       <TestimonialsSection />
 
       {/* Final CTA Section */}
-      <section className="py-24 bg-white">
+      <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
             Klaar om je rijbewijs te halen?
           </h2>
-          <p className="text-xl text-gray-600 mb-10">
-            Neem vandaag nog contact met ons op en zet de eerste stap richting je vrijheid op de weg.
+          <p className="text-base sm:text-xl text-gray-600 mb-8 sm:mb-10">
+            Zet vandaag de eerste stap richting je vrijheid op de weg.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/aanmelden" className="btn-primary text-lg px-10 py-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <Link href="/aanmelden" className="btn-primary text-sm sm:text-lg px-8 sm:px-10 py-3 sm:py-4">
               Direct Aanmelden
             </Link>
-            <Link href="/contact" className="btn-secondary text-lg px-10 py-4">
+            <Link href="/contact" className="btn-secondary text-sm sm:text-lg px-8 sm:px-10 py-3 sm:py-4">
               Neem Contact Op
             </Link>
           </div>
